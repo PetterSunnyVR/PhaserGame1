@@ -29,25 +29,9 @@ demo.state0.prototype = {
 				backgroundsArray.push(this['background' + i]);
 		}
 
-		//var road = game.add.sprite(0,-200,'background');
-		deidraChar = game.add.sprite(300, game.world.centerY+150, 'deidra');
-		
-		this.game.physics.enable(deidraChar);
-		deidraChar.body.collideWorldBounds = true;
-
-		deidraChar.anchor.set(0.5);
-	    deidraChar.scale.set(2);
-	    deidraChar.smoothed = false;
-
-	    deidraChar.animations.add('Stand',[9]);
-	    deidraChar.animations.add('WalkRight',[0,1,2]);
-	    deidraChar.animations.add('WalkLeft',[3,4,5]);
-	    deidraChar.animations.add('WalkUp',[6,7,8]);
-	    deidraChar.animations.add('WalkDown',[9,10,11]);
-	    //deidraChar.animations.play('Stand', 1, false);
-	    deidraChar.frame = 9;
-
-	    this.game.camera.follow(deidraChar);
+		createDeidra();
+        
+        
 	    this.game.camera.deadzone = new Phaser.Rectangle(400,0,800, 1000);
 		//addKey(50,this.changeState,2);
 		//console.log(upKey);
@@ -122,5 +106,27 @@ function addEventStateListener(){
 	for(var i = 0; i<10; i++ ){
 			addKey(48+i,changeState,i);
 		}
+}
+
+function createDeidra(){
+    //var road = game.add.sprite(0,-200,'background');
+		deidraChar = game.add.sprite(300, game.world.centerY+150, 'deidra');
+		
+		this.game.physics.enable(deidraChar);
+		deidraChar.body.collideWorldBounds = true;
+
+		deidraChar.anchor.set(0.5);
+	    deidraChar.scale.set(2);
+	    deidraChar.smoothed = false;
+
+	    deidraChar.animations.add('Stand',[9]);
+	    deidraChar.animations.add('WalkRight',[0,1,2]);
+	    deidraChar.animations.add('WalkLeft',[3,4,5]);
+	    deidraChar.animations.add('WalkUp',[6,7,8]);
+	    deidraChar.animations.add('WalkDown',[9,10,11]);
+	    //deidraChar.animations.play('Stand', 1, false);
+	    deidraChar.frame = 9;
+
+	    this.game.camera.follow(deidraChar);
 }
 
