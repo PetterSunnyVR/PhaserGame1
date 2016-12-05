@@ -46,7 +46,6 @@ demo.state1.prototype = {
         deidraChar.body.velocity.x = 0;
         deidraChar.body.velocity.y = 0;
         
-        curs
 	},
 	update: function(){
         
